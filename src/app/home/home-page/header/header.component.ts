@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public isMenuCollapsed = true;
+
+  links = [
+    { title: 'TRANG CHỦ', fragment: '/' },
+    { title: 'DANH SÁCH PHIM', fragment: '/home/list-movie-page' },
+    { title: 'MUA VÉ', fragment: '/home/booking-pag' },
+    { title: 'LIÊN HỆ', fragment: '/home/about-page' },
+
+  ];
+  active= '1';
+
+  constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {
   }

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
-  ],
+    HomeModule,
+    FormsModule, // test
+    NgbModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
