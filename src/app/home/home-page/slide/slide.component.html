@@ -1,30 +1,14 @@
+<!--Carousel: https://ng-bootstrap.github.io/#/components/carousel/examples -->
+
 <div class="container">
-  <ngb-carousel *ngIf="images">
-    <ng-template ngbSlide>
-      <div class="wrapper">
-        <img src="assets/img/slide/carousel_02.jpg" alt="Random first slide" width="100%" height="100%">
+  <ngb-carousel *ngIf="images" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div class="picsum-img-wrapper">
+        <img [src]="image.src" [alt]="image.alt" width="100%" height="500px">
       </div>
       <div class="carousel-caption">
-        <h3>First Slide</h3>
-        <p> Angular 10 Carousel Example </p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="wrapper">
-        <img src="assets/img/slide/carousel_03.jpg" alt="Random second slide" width="100%" height="100%">
-      </div>
-      <div class="carousel-caption">
-        <h3>Second Slide</h3>
-        <p> Check out Techiediaries</p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="wrapper">
-        <img src="assets/img/slide/carousel_04.jpg" alt="Random third slide" width="100%" height="100%">
-      </div>
-      <div class="carousel-caption">
-        <h3>Third Slide</h3>
-        <p>for full tutorial...</p>
+        <h3>No mouse navigation</h3>
+        <p>This carousel hides navigation arrows and indicators.</p>
       </div>
     </ng-template>
   </ngb-carousel>
