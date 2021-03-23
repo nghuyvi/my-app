@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HomeModule,
     FormsModule, // test
-    NgbModule
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
