@@ -1,1 +1,27 @@
-<p>content works!</p>
+<div class="row my-2">
+  <div class="col-sm-12 text-center">
+    <button class="btn mr-2" (click)="showNews()" [class.btn-primary]='content === "news"'>Góc Điện ảnh</button>
+    <button class="btn mr-2" (click)="showReview()" [class.btn-primary]='content === "review"'>Review</button>
+    <button class="btn" (click)="showPromotion()" [class.btn-primary]='content === "promotion"'>Khuyến
+      mãi</button>
+  </div>
+</div>
+
+<div class="container">
+  <hr/>
+  <div class="row" [ngSwitch]="content">
+    <!-- news -->
+    <div class="col-sm-12" *ngSwitchCase="'news'">
+      <app-news></app-news>
+    </div>
+    <!-- review -->
+    <div class="col-sm-12" *ngSwitchCase="'review'">
+      <app-review></app-review>
+    </div>
+    <!-- promotion -->
+    <div class="col-sm-12" *ngSwitchCase="'promotion'">
+      <app-promotion></app-promotion>
+    </div>
+
+  </div>
+</div>

@@ -1,1 +1,12 @@
-<p>promotion works!</p>
+<div class="row owl-carousel owl-theme">
+  <div class="item card col-sm-12"  *ngFor="let item of listPromotion">
+    <img class="card-img-top" [src]="item.img">
+    <div class="card-body">
+      <a class="card-title" routerLink="/promotion"><h2>{{item.title}}</h2></a>
+      <p class="card-text">{{item.detail.substring(0,120) + "..." }}</p>
+    </div>
+  </div>
+</div>
+
+
+
