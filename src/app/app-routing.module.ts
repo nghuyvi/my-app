@@ -7,8 +7,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 const routes: Routes = [
   {
     path: '',
-    loadChildren: ()=> HomeModule,
-    pathMatch: 'full'
+    loadChildren: () => HomeModule,
   },
   // {
   //   path: 'admin',
@@ -16,12 +15,12 @@ const routes: Routes = [
   // },
   {
     path: '**',
-    component: NotFoundPageComponent
+    component: NotFoundPageComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

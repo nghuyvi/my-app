@@ -1,11 +1,10 @@
 <div class="container my-2">
   <div class="row">
     <div class="col-sm-12 text-center">
-      <button class="btn mr-2" [ngClass]="{'btn-primary': phimDangChieuStatus}" (click)="showNow()">Phim Đang Chiếu</button>
-      <button class="btn" [ngClass]="{'btn-primary': !phimDangChieuStatus}" (click)="showComming()">Phim Sắp Chiếu</button>
+      <button class="btn mr-2" [class.btn-primary]="phimDangChieuStatus" (click)="showNow()">Phim Đang Chiếu</button>
+      <button class="btn" [class.btn-primary]="!phimDangChieuStatus" (click)="showComming()">Phim Sắp Chiếu</button>
     </div>
   </div>
-
 
   <!-- phim đang chiếu -->
   <div class="row my-2">

@@ -12,9 +12,9 @@ export class HeaderComponent implements OnInit {
 
   links = [
     { title: 'TRANG CHỦ', fragment: '/' },
-    { title: 'DANH SÁCH PHIM', fragment: '/home/list-movie-page' },
-    { title: 'MUA VÉ', fragment: '/home/booking-pag' },
-    { title: 'LIÊN HỆ', fragment: '/home/about-page' },
+    { title: 'DANH SÁCH PHIM', fragment: '/list-movie-page' },
+    { title: 'MUA VÉ', fragment: '/booking-page' },
+    { title: 'LIÊN HỆ', fragment: '/about-page' },
 
   ];
   active= '1';
