@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     { title: 'LIÊN HỆ', fragment: '/about-page' },
 
   ];
-  active= '1';
+  active = '1';
 
   constructor(public route: ActivatedRoute) {}
 

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -12,13 +12,13 @@ import {MatTableModule} from '@angular/material/table';
     MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
   ],
   exports: [
     MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
-  ]
+    MatTableModule,
+  ],
 })
-export class MaterialModule { }
+export class MaterialModule {}

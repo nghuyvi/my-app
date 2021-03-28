@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common'; // for btn
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // for slide
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SlideComponent } from './home-page/slide/slide.component';
 import { ListPhimComponent } from './home-page/list-phim/list-phim.component';
@@ -22,12 +18,13 @@ import { NewsComponent } from './home-page/content/news/news.component';
 import { PromotionComponent } from './home-page/content/promotion/promotion.component';
 import { ReviewComponent } from './home-page/content/review/review.component';
 
+import { CarouselModule } from 'ngx-owl-carousel-o'; // for owl carousel
+import { SharedModule } from '../shared/shared.module'; // shared module
+
 @NgModule({
   declarations: [
     HomeComponent,
     HomePageComponent,
-    HeaderComponent,
-    FooterComponent,
     SlideComponent,
     ListPhimComponent,
     ListPhimDangChieuComponent,
@@ -43,7 +40,11 @@ import { ReviewComponent } from './home-page/content/review/review.component';
     PromotionComponent,
     ReviewComponent,
   ],
-  imports: [CommonModule, NgbModule, HomeRoutingModule],
-  exports: [HomePageComponent, HeaderComponent, FooterComponent],
+  imports: [
+    SharedModule,
+    HomeRoutingModule,
+    CarouselModule,
+  ],
+  exports: [HomePageComponent],
 })
 export class HomeModule {}

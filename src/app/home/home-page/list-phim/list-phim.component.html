@@ -1,8 +1,10 @@
-<div class="container my-2">
-  <div class="row">
+<div class="container ">
+  <div class="row my-3">
     <div class="col-sm-12 text-center">
-      <button class="btn mr-2" [class.btn-primary]="phimDangChieuStatus" (click)="showNow()">Phim Đang Chiếu</button>
-      <button class="btn" [class.btn-primary]="!phimDangChieuStatus" (click)="showComming()">Phim Sắp Chiếu</button>
+      <button class="btn mr-2" [class]="phimDangChieuStatus? 'btn-primary' : 'btn-secondary'" (click)="showNow()">Phim
+        Đang Chiếu</button>
+      <button class="btn" [class]="!phimDangChieuStatus? 'btn-primary' : 'btn-secondary' " (click)="showComming()">Phim
+        Sắp Chiếu</button>
     </div>
   </div>
 
@@ -14,7 +16,7 @@
     <!-- phim sắp chiếu -->
     <ng-template #phimSapChieu>
       <div class="col-12 comming">
-       <app-list-phim-sap-chieu></app-list-phim-sap-chieu>
+        <app-list-phim-sap-chieu></app-list-phim-sap-chieu>
       </div>
     </ng-template>
 

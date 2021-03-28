@@ -1,8 +1,8 @@
 <div class="row my-2">
   <div class="col-sm-12 text-center">
-    <button class="btn mr-2" (click)="showNews()" [class.btn-primary]='content === "news"'>Góc Điện ảnh</button>
-    <button class="btn mr-2" (click)="showReview()" [class.btn-primary]='content === "review"'>Review</button>
-    <button class="btn" (click)="showPromotion()" [class.btn-primary]='content === "promotion"'>Khuyến
+    <button class="btn mr-2" (click)="showNews()" [class]='content === "news" ? "btn-primary" : "btn-secondary"'  >Góc Điện ảnh</button>
+    <button class="btn mr-2" (click)="showReview()" [class]='content === "review"? "btn-primary" : "btn-secondary"'>Review</button>
+    <button class="btn" (click)="showPromotion()" [class]='content === "promotion"? "btn-primary" : "btn-secondary"'>Khuyến
       mãi</button>
   </div>
 </div>

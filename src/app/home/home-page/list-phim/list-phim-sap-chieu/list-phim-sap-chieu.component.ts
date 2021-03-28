@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies/movies.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-list-phim-sap-chieu',
@@ -8,6 +9,32 @@ import { MoviesService } from 'src/app/services/movies/movies.service';
 })
 export class ListPhimSapChieuComponent implements OnInit {
   listMovieComing!: any[];
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 600,
+    navText: ['&#8249', '&#8250;'],
+    autoplay: true,
+    autoplayTimeout:3000,
+    autoplaySpeed:1000,
+
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 4,
+      },
+    },
+    nav: false
+  }
 
   constructor(private movieService: MoviesService) {}
 
