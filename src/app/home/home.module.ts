@@ -7,7 +7,6 @@ import { SlideComponent } from './home-page/slide/slide.component';
 import { ListPhimComponent } from './home-page/list-phim/list-phim.component';
 import { ListPhimDangChieuComponent } from './home-page/list-phim/list-phim-dang-chieu/list-phim-dang-chieu.component';
 import { ListPhimSapChieuComponent } from './home-page/list-phim/list-phim-sap-chieu/list-phim-sap-chieu.component';
-import { ItemPhimComponent } from './home-page/list-phim/item-phim/item-phim.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ListMoviePageComponent } from './list-movie-page/list-movie-page.component';
@@ -32,7 +31,6 @@ import { FormsModule } from '@angular/forms';
     ListPhimComponent,
     ListPhimDangChieuComponent,
     ListPhimSapChieuComponent,
-    ItemPhimComponent,
     BookingPageComponent,
     AboutPageComponent,
     ListMoviePageComponent,

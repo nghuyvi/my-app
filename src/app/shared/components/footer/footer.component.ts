@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoffee, faFootballBall, faCookie, faFilm } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
+  faCoffee = faCoffee;
+  faFootballBall = faFootballBall;
+  faCookie = faCookie;
+  faFilm = faFilm;
 
   constructor() { }
 

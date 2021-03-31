@@ -1,9 +1,11 @@
-<div class="row owl-carousel owl-theme ">
-  <div class="item card col-sm-12"  *ngFor="let review of listReview">
-    <img class="card-img-top" [src]="review.img">
-    <div class="card-body">
-      <a class="card-title" routerLink="/review"><h2>{{review.title}}</h2></a>
-      <p class="card-text">{{review.detail.substring(0,120) + "..." }}</p>
-    </div>
-  </div>
-</div>
+
+<!-- https://www.positronx.io/how-to-integrate-owl-carousel-2-in-angular/ -->
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor='let item of listReview'>
+    <app-item-content [itemContent]='item' ></app-item-content>
+  </ng-template>
+</owl-carousel-o>
+
+
+

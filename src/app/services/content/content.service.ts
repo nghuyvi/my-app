@@ -1,9 +1,36 @@
 import { Injectable } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 600,
+    navText: ['&#8249', '&#8250;'],
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplaySpeed: 1000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+    nav: false,
+  };
 
   listNews = [
     {
