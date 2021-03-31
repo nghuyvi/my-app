@@ -20,8 +20,11 @@ import { ReviewComponent } from './home-page/content/review/review.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o'; // for owl carousel
 import { SharedModule } from '../shared/shared.module'; // shared module
+import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
+  imports: [SharedModule, HomeRoutingModule, CarouselModule, FormsModule],
   declarations: [
     HomeComponent,
     HomePageComponent,
@@ -39,12 +42,9 @@ import { SharedModule } from '../shared/shared.module'; // shared module
     NewsComponent,
     PromotionComponent,
     ReviewComponent,
+    SignUpPageComponent,
   ],
-  imports: [
-    SharedModule,
-    HomeRoutingModule,
-    CarouselModule,
-  ],
+
   exports: [HomePageComponent],
 })
 export class HomeModule {}

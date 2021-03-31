@@ -5,6 +5,7 @@ import { BookingPageComponent } from './booking-page/booking-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeComponent } from './home.component';
 import { ListMoviePageComponent } from './list-movie-page/list-movie-page.component';
+import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'booking-page',
         component: BookingPageComponent,
+      },
+      {
+        path: 'sign-up-page',
+        component: SignUpPageComponent
       },
     ],
   },
