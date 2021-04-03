@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // input.ng-invalid.ng-touched {
 //   border-left: solid 2px tomato;
 // }
@@ -11,6 +12,16 @@ mat-form-field {
 .form-group.loai-nguoi-dung {
   margin-top: 20px;
 }
+=======
+input.ng-invalid.ng-touched {
+  border-left: solid 2px tomato;
+}
+
+input.ng-valid.ng-touched {
+  border-left: solid 2px greenyellow;
+}
+
+>>>>>>> d8a3409070719e23955020e3e3e485d0c0d3602b
 table, td, th, thead, tr {
   border: 1px solid rgb(187, 186, 186) !important;
 }

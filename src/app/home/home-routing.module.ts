@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActivateGuard } from '../guards/can-activate.guard';
+<<<<<<< HEAD
 import { CanDeactivateGuard } from '../guards/can-deactivate.guard';
+=======
+>>>>>>> d8a3409070719e23955020e3e3e485d0c0d3602b
 import { AboutPageComponent } from './about-page/about-page.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
@@ -37,6 +40,14 @@ const routes: Routes = [
         path: 'sign-up-page',
         component: SignUpPageComponent,
         // canDeactivate: [CanDeactivateGuard]
+      },
+      {
+        path: 'log-in',
+        component: LogInPageComponent
+      },
+      {
+        path: 'detail-page/:id',
+        component: DetailPageComponent
       },
       {
         path: 'log-in',
