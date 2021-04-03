@@ -1,0 +1,64 @@
+<app-loader></app-loader>
+<div class="showtimes" id="showtimes">
+  <h4>LỊCH CHIẾU</h4>
+
+  <div class="showtimes-detail">
+    <ul>
+      <li class="showtimes-day">
+        <a href="#">Thứ Sáu</a>
+      </li>
+      <li class="showtimes-day weekend">
+        <a href="#">Thứ Bảy</a>
+      </li>
+      <li class="showtimes-day weekend">
+        <a href="#">Chủ Nhật</a>
+      </li>
+      <li class="showtimes-day">
+        <a href="#">Thứ Hai</a>
+      </li>
+      <li class="showtimes-day">
+        <a href="#">Thứ Ba</a>
+      </li>
+      <li class="showtimes-day">
+        <a href="#">Thứ Tư</a>
+      </li>
+      <li class="showtimes-day">
+        <a href="#">Thứ Năm</a>
+      </li>
+    </ul>
+
+    <select class="showtimes-options" #showtimes  (change)="changeValue(showtimes.value)">
+      <option *ngFor="let item of listCinema" [value]="item.tenHeThongRap">
+        <span>{{item.tenHeThongRap}}</span>
+      </option>
+    </select>
+
+    <div class="container thong-tin-rap">
+      <table>
+        <thead>
+          <tr>
+            <th>Hệ thống rạp</th>
+            <th>Cụm rạp</th>
+            <th>Ngày chiếu</th>
+            <th>Giờ chiếu</th>
+            <th>Chọn ghế</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor="let item of chiTietPhim">
+            <tr *ngIf="showtimes.value === item.thongTinRap.tenHeThongRap">
+              <td>{{item.thongTinRap.tenHeThongRap}}</td>
+              <td>{{item.thongTinRap.tenCumRap}}</td>
+              <td>{{item.ngayChieuGioChieu | date: 'shortDate'}}</td>
+              <td>{{item.ngayChieuGioChieu | date:'mediumTime'}}</td>
+              <td><button class="ml-5">
+                <a class="booking-btn"routerLink="/booking-page">Chọn ghế</a>
+              </button></td>
+            </tr>
+        </tbody>
+        <!-- <ng-template #notice>
+          <h2>Không có lịch chiếu ở hệ thống rạp {{showtimes.value}}</h2>
+        </ng-template> -->
+      </table>
+    </div>
+  </div>
+</div>
