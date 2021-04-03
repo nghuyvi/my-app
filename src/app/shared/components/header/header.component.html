@@ -11,6 +11,21 @@
         <li class="nav-item" *ngFor="let link of linksHome">
           <a class="nav-link" [routerLink]="link.fragment" (click)="isMenuCollapsed = true" >{{ link.title }}</a>
         </li>
+
+        <!-- Đăng ký/Đăng nhập -->
+        <li class="nav-item">
+          <a class="dang-ky" *ngIf="!isLogin, else Login">
+            <a class="nav-link" routerLink="/log-in">ĐĂNG NHẬP/ </a>
+            <a class="nav-link" routerLink="/sign-up-page">ĐĂNG KÝ</a>
+          </a>
+          <ng-template #Login >
+            <a class="nav-link hello">XIN CHÀO {{userLogin.taiKhoan | uppercase |cutString:8}}</a>
+            <a class="nav-link" routerLink="/">
+              <button class="logout" type="submit" (click)="logOut()">THOÁT</button>
+            </a>
+          </ng-template>
+        </li>
+        <!-- End---Đăng ký/Đăng nhập -->
       </ul>
     </div>
   </nav>
