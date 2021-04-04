@@ -12,8 +12,8 @@
   <img class="card-img-top" [src]="itemContent.img" alt="">
   <div class="card-body">
     <a class="card-title" routerLink="/tin-tuc">
-      <h5>{{itemContent.title}}</h5>
+      <h2>{{itemContent.title}}</h2>
     </a>
-    <p class="card-text">{{itemContent.detail | cutString:120 }}</p>
+    <p class="card-text">{{itemContent.detail.substring(0,120) + "..." }}</p>
   </div>
 </div>

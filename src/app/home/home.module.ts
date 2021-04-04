@@ -21,23 +21,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o'; // for owl carousel
 import { SharedModule } from '../shared/shared.module'; // shared module
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { FormsModule } from '@angular/forms';
-import { LogInPageComponent } from './log-in-page/log-in-page.component';
-import { MaterialModule } from '../material/material.module';
-import { CommonModule } from '@angular/common';
-import { DetailPageComponent } from './detail-page/detail-page.component';
-import { DetailMovieComponent } from './detail-page/detail-movie/detail-movie.component';
-import { ShowTimeComponent } from './detail-page/show-time/show-time.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    CarouselModule,
-    FormsModule,
-    MaterialModule,
-    HomeRoutingModule,
-  ],
-
+  imports: [SharedModule, HomeRoutingModule, CarouselModule, FormsModule],
   declarations: [
     HomeComponent,
     HomePageComponent,
@@ -55,13 +41,8 @@ import { ShowTimeComponent } from './detail-page/show-time/show-time.component';
     PromotionComponent,
     ReviewComponent,
     SignUpPageComponent,
-    LogInPageComponent,
-    DetailPageComponent,
-    DetailMovieComponent,
-    ShowTimeComponent,
   ],
 
   exports: [HomePageComponent],
-
 })
 export class HomeModule {}
