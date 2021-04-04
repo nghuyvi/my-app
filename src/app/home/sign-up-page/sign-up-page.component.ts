@@ -18,13 +18,13 @@ export class SignUpPageComponent implements OnInit {
   }
 
   dangKy(form: any) {
-    console.log(form)
+    console.log(form.value)
     const objUser = {
       taiKhoan: form.value.taiKhoan,
       matKhau: form.value.matKhau,
       hoTen: form.value.hoTen,
       email: form.value.email,
-      soDt: form.value.sdt,
+ soDt: form.value.sdt,
       maLoaiNguoiDung: 'KhachHang',
       maNhom: 'GP10',
     }
