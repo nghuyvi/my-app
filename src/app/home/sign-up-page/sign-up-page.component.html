@@ -2,31 +2,36 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 mx-auto">
       <h2 class="display-4">ĐĂNG KÝ</h2>
+      <hr />
       <form #formDangKy="ngForm" (ngSubmit)="dangKy(formDangKy)">
 
         <!-- Tài khoản -->
         <div class="form-group">
-          <input #TaiKhoan="ngModel" name="taiKhoan" ngModel placeholder="Tài khoản" type="text" class="form-control"
+          <input #TaiKhoan="ngModel" ngModel name="taiKhoan"  placeholder="Tài khoản" type="text" class="form-control"
             required>
 
           <!-- validation -->
           <div class="alert alert-danger" *ngIf="TaiKhoan.errors && (TaiKhoan.touched || TaiKhoan.dirty) ">
-            <span class="text-text-danger">Vui lòng điền tài khoản</span>
+            <span class="text-text-danger">Vui lòng nhập tài khoản</span>
           </div>
         </div>
         <!-- Mật khẩu -->
         <div class="form-group">
-          <input #MatKhau="ngModel" ngModel name="matKhau" placeholder="Mật khẩu" type="password" class="form-control"
+          <input #matKhau="ngModel" ngModel name="matKhau" placeholder="Mật khẩu" type="password" class="form-control"
             required minlength="8" maxlength="20">
 
           <!-- validation -->
-          <div class="alert alert-danger" *ngIf="MatKhau.errors?.required && MatKhau.touched">
-            <span class="text-text-danger">Bắt buộc nhập</span>
+          <div class="alert alert-danger" *ngIf="matKhau.errors && (matKhau.touched || matKhau.dirty)">
+            <div *ngIf="matKhau.errors.minlength || matKhau.errors.maxlength">
+              <span class="text text-danger text-text-danger"> Mật khẩu phải từ 8 đến 20 ký tự</span>
+            </div>
+            <span class="text-text-danger">Vui lòng nhập mật khẩu</span>
           </div>
 
-          <div class="alert alert-danger" *ngIf="MatKhau.touched && MatKhau.errors?.minlength">
-            <span>Mật khẩu phải từ 3 kí tự</span>
+          <div class="alert alert-danger" *ngIf="matKhau.touched && matKhau.errors?.minlength">
+            <span>Mật khẩu phải từ 8 kí tự</span>
           </div>
+
         </div>
 
         <!-- Họ tên -->
@@ -38,7 +43,7 @@
 
           <!-- validation -->
           <div class="alert alert-danger" *ngIf="HoTen.errors?.required && HoTen.touched">
-            <span class="text-text-danger">Bắt buộc nhập</span>
+            <span class="text-text-danger">Vui lòng nhập họ và tên</span>
           </div>
 
           <div class="alert alert-danger" *ngIf="HoTen.touched && HoTen.errors?.minlength">
@@ -67,7 +72,7 @@
 
           <!-- validation -->
           <div class="alert alert-danger" *ngIf="SDT.errors?.required && SDT.touched">
-            <span class="text-text-danger">Bắt buộc nhập</span>
+            <span class="text-text-danger">Vui lòng nhập số điện thoại</span>
           </div>
 
           <div class="alert alert-danger" *ngIf="SDT.errors?.pattern && SDT.touched">
@@ -75,21 +80,23 @@
           </div>
         </div>
 
-        <!-- Loại người dùng -->
-        <div class="form-group">
+        <!-- Loại người dùng: đăng ký nên để mặc định giá trị KhachHang -->
+        <!-- <div class="form-group">
           <label style="font-weight: bold;">Loại người dùng:</label>
           <br>
           <input type="radio" ngModel value="KhachHang" name="maLoaiNguoiDung"> Khách hàng
           <input type="radio" ngModel value="QuanTri" name="maLoaiNguoiDung"> Quản trị
-        </div>
+        </div> -->
 
-        <button class="btn" [disabled]="formDangKy.invalid" type="submit" (click)="dangKy(formDangKy)">Thêm</button>
+        <button class="btn btn-success"  type="submit" (click)="dangKy(formDangKy)">Đăng
+          ký</button>
 
       </form>
+      <hr />
     </div>
   </div>
 
-  <table class="table" *ngIf="listUser.length > 0">
+  <!-- <table class="table" *ngIf="listUser.length > 0">
     <thead>
       <tr>
         <th>Tài khoản</th>
@@ -112,6 +119,6 @@
             [attr.data-maLoai]="item.maLoai" class="btn" (click)="update(btnUpdate)">Cập nhật</button></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
 </div>
