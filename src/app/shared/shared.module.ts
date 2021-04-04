@@ -8,22 +8,15 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemContentComponent } from './components/item-content/item-content.component';
-import { ButtonDirective } from './directives/button.directive';
-import { CutStringPipe } from './custom-pipes/cut-string.pipe';
-import { LoaderComponent } from './components/loader/loader.component';
-import { MaterialModule } from '../material/material.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, NgbModule, FontAwesomeModule, MaterialModule],
+  imports: [CommonModule, RouterModule, NgbModule, FontAwesomeModule],
   declarations: [
     FooterComponent,
     HeaderComponent,
     NotFoundPageComponent,
     ItemMovieComponent,
     ItemContentComponent,
-    ButtonDirective,
-    CutStringPipe,
-    LoaderComponent,
   ],
 
   exports: [
@@ -36,9 +29,6 @@ import { MaterialModule } from '../material/material.module';
     ItemMovieComponent,
     ItemContentComponent,
     FontAwesomeModule,
-    ButtonDirective,
-    CutStringPipe,
-    LoaderComponent
   ],
 })
 export class SharedModule {}

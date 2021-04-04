@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AccountService } from 'src/app/services/account/account.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -9,12 +7,14 @@ import { AccountService } from 'src/app/services/account/account.service';
   styleUrls: ['./sign-up-page.component.scss']
 })
 export class SignUpPageComponent implements OnInit {
-  @ViewChild('formDKy') formDK!: NgForm;
+
+  @ViewChild('formDangKy') formDK!: NgForm;
+
   listUser: any[] = [];
-  constructor(private accService: AccountService, private router: Router) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-
   }
 
   dangKy(form: any) {
@@ -24,28 +24,36 @@ export class SignUpPageComponent implements OnInit {
       matKhau: form.value.matKhau,
       hoTen: form.value.hoTen,
       email: form.value.email,
- soDt: form.value.sdt,
-      maLoaiNguoiDung: 'KhachHang',
-      maNhom: 'GP10',
+      sdt: form.value.sdt,
+      maLoai: 'KhachHang',
     }
     this.listUser.push(objUser);
     console.log(this.listUser)
     this.formDK.reset();
-    this.accService.dangKy(objUser).subscribe(data => {
-      console.log(data);
-      if(data) {
-        localStorage.setItem('user', JSON.stringify(data));
-        alert('Đăng ký thành công!')
-        this.router.navigate(['/'])
-      }
-      else {
-        alert('Đăng ký thất bại!')
-      }
+  }
+
+  update(user:any) {
+    console.log(user)
+    let matKhau = user.getAttribute('data-matKhau')
+    let taiKhoan = user.getAttribute('data-taiKhoan')
+    let hoTen = user.getAttribute('data-hoTen')
+    let email = user.getAttribute('data-email')
+    let sdt = user.getAttribute('data-sdt')
+    let maLoai = user.getAttribute('data-maLoai')
+    this.formDK.setValue({
+      taiKhoan: taiKhoan,
+      matKhau: matKhau,
+      hoTen: hoTen,
+      email: email,
+      sdt: sdt,
+      maLoaiNguoiDung: maLoai,
     })
   }
 
   checkDeactivate() {
     return this.formDK.submitted;
   }
+
+
 
 }
