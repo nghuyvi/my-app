@@ -37,13 +37,13 @@ export class MoviesService {
 
   getListMovieNow(): Observable<any> {
     const api =
-      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP03';
+      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP07';
     return this.httpClient.get(api).pipe(tap());
   }
 
   getListMovieComing(): Observable<any> {
     const api =
-      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP02';
+      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP05';
     return this.httpClient.get(api).pipe(tap());
   }
 
