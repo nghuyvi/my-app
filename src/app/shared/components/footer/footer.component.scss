@@ -82,9 +82,15 @@
   .site-footer .social-icons {
     text-align: center;
   }
+  iframe {
+    width: fit-content;
+  }
 }
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
     margin-bottom: 30px;
+  }
+  iframe {
+    width: fit-content;
   }
 }
