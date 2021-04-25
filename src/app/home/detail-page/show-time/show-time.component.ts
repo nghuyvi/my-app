@@ -17,14 +17,13 @@ export class ShowTimeComponent implements OnInit {
   logo: any;
   dkSwitch = '';
   heThongRap: any[] = [];
-  cumRapChieu = [{ alert: '', tenCumRap: '' }];
-  lichChieuPhim: any[] = [];
+  cumRapChieu: any[] = [];
+  heThongRapChieu:any []=[]
 
   constructor(
     private cinemaSV: CinemaService,
     private activatedRoute: ActivatedRoute,
     private movieService: MoviesService,
-    private loaderSV: LoaderService,
     private router: Router
   ) {}
 
@@ -47,43 +46,32 @@ export class ShowTimeComponent implements OnInit {
       this.logo = this.thongTinRap.logo;
     });
 
+    this.changeValue('CGV');
   }
 
   changeValue(maHeThongRap: string) {
     this.dkSwitch = maHeThongRap;
+    // console.log(this.dkSwitch)
     this.changeShowTime();
   }
 
   changeShowTime() {
     this.cinemaSV.getChiTietRap(this.maPhim).subscribe((data) => {
       console.log(data);
-      data.heThongRapChieu.map((item: any) => {
+      this.heThongRapChieu = data.heThongRapChieu;
+      console.log(this.heThongRapChieu)
+      this.heThongRapChieu.map((item: any) => {
         if (item.maHeThongRap === this.dkSwitch) {
           this.heThongRap.push(item);
           console.log(this.heThongRap);
           this.heThongRap.map((item: any) => {
             this.cumRapChieu = item.cumRapChieu;
-            this.cumRapChieu.map((item: any) => {
-              this.lichChieuPhim = item.lichChieuPhim;
-            });
           });
           console.log(this.cumRapChieu);
         }
-        // else {
-        //   this.cumRapChieu.map((item:any)=>{
-        //     item.alert='ko có suất';
-        //   })
-        //   console.log(item.alert)
-        // }
       });
     });
-  }
-
-  chonGhe(maLichChieu: any) {
-    console.log(maLichChieu);
-    this.cinemaSV.layDSPhongVe(maLichChieu).subscribe((response) => {
-      this.router.navigate(['/booking-page/', maLichChieu]);
-      console.log(response);
-    });
+    this.heThongRap.splice(0,this.heThongRap.length);
+    this.cumRapChieu.splice(0,this.cumRapChieu.length);
   }
 }

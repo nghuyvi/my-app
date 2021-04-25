@@ -44,7 +44,8 @@
   background-color: rgb(4, 163, 4);
 }
 .seat-available {
-  background-color: hsl(45, 100%, 51%);
+  border: 1px solid hsl(45, 100%, 51%);
+  background-color: #fff;
 }
 
 // table

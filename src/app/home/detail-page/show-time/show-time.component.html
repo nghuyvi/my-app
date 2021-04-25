@@ -82,21 +82,35 @@
             </a>
           </div>
         </div>
-        <!-- list phim theo cụm rạp -->
+
+        <!-- lịch chiếu theo cụm rạp -->
         <div class="lich-chieu-wrap">
           <div class="lich-chieu">
-            <div class="lich-chieu-intro" *ngFor="let item of cumRapChieu">
-              <p>{{ item.tenCumRap }}</p>
-              <!-- <p>{{ item.alert }}</p> -->
+            <div *ngFor="let item of cumRapChieu">
+              <p class="lich-chieu-intro">{{ item.tenCumRap }}</p>
+                <ng-container>
+                  <div class="lich-chieu-body">
+                    <app-show-time-item *ngFor="let _item of item.lichChieuPhim" [showtime]="_item"></app-show-time-item>
+                  </div>
+                </ng-container>
+                <!-- <ng-template #notice>
+                  <p class="notice">Không có suất chiếu</p>
+                </ng-template> -->
             </div>
-            <div class="lich-chieu-body">
-                <app-show-time-by-cinema
+
+            <!-- <ng-container *ngIf="this.cumRapChieu.length > 0; else notice">
+              <div class="lich-chieu-body" *ngFor="let item of lichChieuTheoRap">
+                <app-show-time-item
                   class="lich-chieu-card"
-                  *ngFor="let item of lichChieuPhim | slice: 0:18"
-                  [showtime]="item"
+                  *ngFor='let _item of item.lichChieuPhim'
+                  [showtime]="_item"
                 >
-                </app-show-time-by-cinema>
-            </div>
+                </app-show-time-item>
+              </div>
+            </ng-container>
+            <ng-template #notice>
+              <p class="notice">Không có suất chiếu</p>
+            </ng-template> -->
           </div>
         </div>
       </div>
