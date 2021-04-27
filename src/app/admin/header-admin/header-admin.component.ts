@@ -7,10 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header-admin.component.scss']
 })
 export class HeaderAdminComponent implements OnInit {
-<<<<<<< HEAD
     isMenuCollapsed = true;
-=======
->>>>>>> d8a3409070719e23955020e3e3e485d0c0d3602b
     isLogin = false;
     userLogin = {
       email: "",
